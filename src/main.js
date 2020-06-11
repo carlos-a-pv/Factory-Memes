@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
 
 import firebase from 'firebase'
-import VueFire from 'vuefire'
-import router from './router/index.js'
+import { firestorePlugin } from 'vuefire'
+import router from './routes/index.js'
 
 Vue.config.productionTip = false
 
@@ -22,7 +22,7 @@ Vue.config.productionTip = false
   export const firestore = firebaseApp.firestore();
   export const storage = firebase.storage().ref('/images');
 
-Vue.use(VueFire)
+  Vue.use(firestorePlugin)
 
 new Vue({
   vuetify,
